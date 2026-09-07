@@ -1,200 +1,213 @@
 import {
-  ArrowDownRight,
+  ArrowRight,
   ArrowUpRight,
   Atom,
+  BrainCircuit,
   CircuitBoard,
-  Network,
+  Cpu,
+  ShieldCheck,
   Zap,
 } from 'lucide-react';
+import { NewsletterForm } from '@/components/forms';
+import { AnimatedStat, DualLabHero, ProgressMeter, Reveal } from '@/components/home-experience';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { NewsletterForm } from '@/components/forms';
-import { courses, insights, projects, publications, resources } from '@/lib/content';
+import { courses, insights, projects, publications } from '@/lib/content';
+
+const labCards = [
+  {
+    href: '/labs/power-systems',
+    title: 'AI in Power Systems Lab',
+    description: 'Building intelligent, reliable and future-ready energy systems through advanced AI research.',
+    tags: ['Renewable prediction', 'Load & EV demand', 'Smart grids', 'Reinforcement learning'],
+    className: 'power',
+    icon: Zap,
+  },
+  {
+    href: '/labs/quantum-cyber',
+    title: 'Quantum Cyber Intelligence Lab',
+    description: 'Exploring quantum intelligence, machine learning and cybersecurity through rigorous experiments.',
+    tags: ['Quantum ML', 'Quantum LSTM', 'Cryptography', 'Threat detection'],
+    className: 'quantum',
+    icon: Atom,
+  },
+] as const;
+
+const consulting = [
+  { title: 'AI & Machine Learning', icon: BrainCircuit, items: ['Machine-learning systems', 'Deep-learning models', 'Forecasting workflows'] },
+  { title: 'Energy & Power Systems', icon: Zap, items: ['Renewable forecasting', 'Microgrid intelligence', 'Decision-aware optimization'] },
+  { title: 'Quantum Intelligence', icon: Cpu, items: ['Hybrid quantum models', 'QNN architecture review', 'Experiment design'] },
+  { title: 'Cyber Intelligence', icon: ShieldCheck, items: ['Threat analysis', 'Secure energy data', 'Anomaly detection'] },
+] as const;
 
 export default function Home() {
   return (
-    <main>
+    <main className="reference-home">
       <SiteHeader />
+      <DualLabHero />
 
-      <section className="hero" id="top">
-        <div className="hero-intro">
-          <p className="eyebrow"><span /> Two laboratories. One research continuum.</p>
-          <h1>Intelligence for the systems<br />the future depends on.</h1>
-          <p>
-            Research, education and applied consulting led by <strong>Md. Omer Faruque</strong>
-            {' '}across intelligent energy and quantum-secure computation.
-          </p>
-        </div>
-
-        <div className="lab-worlds" id="labs">
-          <a className="lab-world power-world" href="/labs/power-systems">
-            <div className="world-grid" aria-hidden="true" />
-            <div className="signal power-signal" aria-hidden="true">
-              <span /><span /><span /><span /><span />
+      <section className="reference-section mission-section" id="mission">
+        <div className="mission-grid">
+          <Reveal className="mission-portrait">
+            <div className="portrait-frame">
+              <span aria-hidden="true" />
+              <img src="/omer-faruque-portrait.jpg" alt="Md. Omer Faruque" />
+              <div><strong>Md. Omer Faruque</strong><small>Founder · Researcher · Mentor</small></div>
             </div>
-            <div className="world-number">01 / ENERGY INTELLIGENCE</div>
-            <div className="world-content">
-              <div className="world-icon"><Zap size={20} /></div>
-              <h2>AI in<br />Power Systems</h2>
-              <p>
-                Forecasting, optimization and decision-aware learning for reliable renewable-energy systems.
-              </p>
-              <span className="world-link">Enter the lab <ArrowDownRight size={18} /></span>
+          </Reveal>
+          <Reveal className="mission-copy" delay={100}>
+            <div className="reference-label"><span /> One ecosystem · Two laboratories</div>
+            <h2>Advancing intelligent energy systems and quantum-secure intelligence—through research, education and mentorship.</h2>
+            <p>Research at the intersection of artificial intelligence, power systems, quantum machine learning and cybersecurity. Two virtual laboratories connect publication-grade inquiry with practical education and supervised research.</p>
+            <div className="reference-tags">
+              {['AI researcher', 'Power systems', 'Quantum ML', 'Research mentor', 'Educator', 'Consultant'].map((tag) => <span key={tag}>{tag}</span>)}
             </div>
-          </a>
-
-          <a className="lab-world quantum-world" href="/labs/quantum-cyber">
-            <div className="world-grid" aria-hidden="true" />
-            <div className="quantum-orbit" aria-hidden="true">
-              <span /><span /><span />
-              <i />
-            </div>
-            <div className="world-number">02 / QUANTUM INTELLIGENCE</div>
-            <div className="world-content">
-              <div className="world-icon"><Atom size={20} /></div>
-              <h2>Quantum Cyber<br />Intelligence</h2>
-              <p>
-                Quantum machine learning, secure intelligence and new architectures for trusted computation.
-              </p>
-              <span className="world-link">Enter the lab <ArrowDownRight size={18} /></span>
-            </div>
-          </a>
-        </div>
-
-        <div className="hero-footer">
-          <span>Research.</span><span>Intelligence.</span><span>Energy.</span><span>Quantum.</span>
+            <div className="mission-links"><a href="/about">Meet the researcher <ArrowUpRight size={15} /></a><a href="/research">Explore the research <ArrowUpRight size={15} /></a></div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="research-ledger" id="research">
-        <div className="section-label">
-          <span>Research record</span>
-          <p>Evidence before spectacle.</p>
-        </div>
-        <div className="metrics" aria-label="Research statistics">
-          {[
-            ['360+', 'Citations'],
-            ['07', 'H-index'],
-            ['06', 'i10-index'],
-            ['13', 'Publications'],
-            ['5.25', 'Average impact factor'],
-          ].map(([value, label]) => (
-            <div className="metric" key={label}>
-              <strong>{value}</strong><span>{label}</span>
-            </div>
-          ))}
-        </div>
-        <div className="profile-bridge" id="about">
-          <figure>
-            <img src="/omer-faruque-portrait.jpg" alt="Md. Omer Faruque" />
-            <figcaption>Md. Omer Faruque · Researcher, mentor & educator</figcaption>
-          </figure>
-          <div className="profile-copy">
-            <span className="kicker">Principal researcher</span>
-            <h2>Rigorous research,<br />translated into real capability.</h2>
-            <p>
-              Md. Omer Faruque works at the intersection of renewable-energy forecasting,
-              optimization-embedded deep learning, power-systems cybersecurity and quantum
-              machine learning. His work connects publication-grade inquiry with teaching,
-              mentorship and deployable technical systems.
-            </p>
-            <div className="interest-row">
-              <span><Network size={15} /> Decision-aware forecasting</span>
-              <span><CircuitBoard size={15} /> Quantum LSTM architecture</span>
-            </div>
-            <a className="text-link" href="/about">View research profile <ArrowUpRight size={16} /></a>
+      <section className="reference-section stats-section" aria-label="Research record">
+        <Reveal>
+          <div className="reference-stats">
+            <AnimatedStat value={360} suffix="+" label="Citations" />
+            <AnimatedStat value={7} label="H-index" />
+            <AnimatedStat value={6} label="i10-index" />
+            <AnimatedStat value={13} label="Publications" />
+            <AnimatedStat value={5.25} decimals={2} label="Average impact factor" />
           </div>
+        </Reveal>
+      </section>
+
+      <section className="reference-section" id="labs">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> The laboratories</div><h2>Two interconnected research worlds</h2><p>Independent ecosystems with their own research areas, projects, publications and learning paths—united under one research brand.</p></div>
+        </div>
+        <div className="reference-lab-grid">
+          {labCards.map((lab, index) => {
+            const Icon = lab.icon;
+            return (
+              <Reveal delay={index * 100} key={lab.href}>
+                <a className={`reference-lab-card ${lab.className}`} href={lab.href}>
+                  <div className="lab-card-icon"><Icon size={20} /></div>
+                  <h3>{lab.title}</h3><p>{lab.description}</p>
+                  <div className="reference-tags">{lab.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <div className="card-arrow">Enter the laboratory <ArrowRight size={16} /></div>
+                </a>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
-      <section className="editorial-section">
-        <div className="section-heading">
-          <span className="kicker">Selected publications</span>
-          <h2>Work that moves from<br />prediction to decision.</h2>
-          <a className="text-link" href="/research">View all 13 publications <ArrowUpRight size={16} /></a>
+      <section className="reference-section">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> Publication highlights</div><h2>Featured research</h2><p>Peer-reviewed work spanning forecasting, optimization and secure energy systems.</p></div>
+          <a href="/research">View all publications <ArrowUpRight size={15} /></a>
         </div>
-        <div className="publication-grid">
+        <div className="reference-card-grid publication-cards">
           {publications.filter((item) => item.featured).slice(0, 3).map((item, index) => (
-            <article className="publication-card" key={item.doi}>
-              <div className="pub-index">0{index + 1}</div>
-              <div><span>{item.area} · {item.year}</span><h3>{item.title}</h3><p>{item.venue}</p></div>
-              <div className="pub-meta"><span>{item.metric}</span><span>{item.quartile}</span><a href={item.doi} target="_blank" rel="noreferrer" aria-label={`Open DOI for ${item.title}`}><ArrowUpRight size={18} /></a></div>
-            </article>
+            <Reveal delay={index * 90} key={item.doi}>
+              <article className="reference-card publication-highlight">
+                <div><span>{item.area} · {item.year}</span><span>{item.quartile} {item.metric ? `· ${item.metric}` : ''}</span></div>
+                <h3>{item.title}</h3><p>{item.authors}</p><em>{item.venue}</em>
+                <a href={item.doi} target="_blank" rel="noreferrer">Open DOI <ArrowUpRight size={14} /></a>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="project-section">
-        <div className="section-heading compact-heading">
-          <span className="kicker">Running work</span>
-          <h2>Active research projects</h2>
+      <section className="reference-section">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> Running projects</div><h2>Research in motion</h2></div>
+          <a href="/labs/power-systems">Explore all projects <ArrowUpRight size={15} /></a>
         </div>
-        <div className="project-list">
-          {projects.map((project) => (
-            <article key={project.title}>
-              <span className={`status ${project.status.toLowerCase().replace(' ', '-')}`}>{project.status}</span>
-              <div><small>{project.lab}</small><h3>{project.title}</h3><p>{project.summary}</p></div>
-              <div className="tag-stack">{project.methods.map((method) => <span key={method}>{method}</span>)}</div>
-              <ArrowUpRight size={20} />
-            </article>
+        <div className="reference-card-grid project-cards">
+          {projects.slice(0, 3).map((project, index) => (
+            <Reveal delay={index * 90} key={project.title}>
+              <article className="reference-card project-highlight">
+                <div className="project-top"><span>{project.lab}</span><strong>{project.status}</strong></div>
+                <h3>{project.title}</h3><p>{project.summary}</p>
+                <div className="reference-tags">{project.methods.map((method) => <span key={method}>{method}</span>)}</div>
+                <ProgressMeter value={[74, 58, 66][index]} />
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="course-section" id="courses">
-        <div className="section-heading">
-          <span className="kicker">Research learning</span>
-          <h2>Courses built around<br />real research practice.</h2>
-          <p>Live, interactive learning that connects theory, code, paper analysis and independent investigation.</p>
+      <section className="reference-section">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> Course platform</div><h2>Learn with the labs</h2><p>Academic courses from research foundations to quantum neural networks, taught through real experiments.</p></div>
+          <a href="/courses">Browse all courses <ArrowUpRight size={15} /></a>
         </div>
-        <div className="course-grid">
-          {courses.slice(0, 4).map((course, index) => (
-            <a className="course-card" href={`/courses/${course.slug}`} key={course.slug}>
-              <div><span>0{index + 1}</span><small>{course.category}</small></div>
-              <h3>{course.title}</h3><p>{course.description}</p>
-              <footer><span>{course.level} · {course.duration}</span><strong>{course.price}</strong></footer>
-            </a>
-          ))}
-        </div>
-        <a className="text-link section-link" href="/courses">Explore all courses <ArrowUpRight size={16} /></a>
-      </section>
-
-      <section className="two-paths">
-        <a href="/research-with-us" className="path-card research-path">
-          <span className="kicker">For students & researchers</span>
-          <h2>Research with us</h2>
-          <p>A structured six-month pathway from foundational concepts to an independent, publication-quality research draft.</p>
-          <span className="world-link">Start your research journey <ArrowDownRight size={18} /></span>
-        </a>
-        <a href="/consulting" className="path-card consulting-path" id="consulting">
-          <span className="kicker">For teams & organizations</span>
-          <h2>Research & AI consulting</h2>
-          <p>Focused technical work across forecasting, optimization, energy intelligence, quantum AI and cybersecurity.</p>
-          <span className="world-link">Discuss your project <ArrowDownRight size={18} /></span>
-        </a>
-      </section>
-
-      <section className="resource-section" id="resources">
-        <div className="section-heading compact-heading"><span className="kicker">Open practice</span><h2>Research code & resources</h2></div>
-        <div className="resource-list">
-          {resources.slice(0, 4).map((resource) => (
-            <a href="/resources" key={resource.title}><span>{resource.kind}</span><h3>{resource.title}</h3><p>{resource.description}</p><small>{resource.tech}</small><ArrowUpRight size={18} /></a>
+        <div className="reference-card-grid course-cards">
+          {courses.slice(0, 3).map((course, index) => (
+            <Reveal delay={index * 90} key={course.slug}>
+              <a className="reference-card reference-course-card" href={`/courses/${course.slug}`}>
+                <div className={`course-art ${course.category.startsWith('Quantum') ? 'quantum' : 'power'}`}><CircuitBoard size={34} /><span>0{index + 1}</span></div>
+                <div className="course-card-body"><small>{course.level} · {course.duration}</small><h3>{course.title}</h3><p>{course.description}</p><footer><strong>{course.price}</strong><span>View course <ArrowUpRight size={14} /></span></footer></div>
+              </a>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="insight-section" id="insights">
-        <div className="section-heading compact-heading"><span className="kicker">Intelligence journal</span><h2>Research notes & briefings</h2></div>
-        <div className="insight-grid">
+      <section className="reference-section">
+        <Reveal>
+          <div className="journey-panel">
+            <div><div className="reference-label"><span /> Research with us</div><h2>Start your research journey</h2><p>Work directly with the lab—from topic selection and methodology to manuscript preparation and journal submission.</p><a href="/research-with-us">Start your research journey <ArrowUpRight size={16} /></a></div>
+            <div className="journey-tags">{['Topic selection', 'Problem formulation', 'Literature review', 'Methodology design', 'Model development', 'Paper writing'].map((tag) => <span key={tag}>{tag}</span>)}</div>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="reference-section">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> Consulting</div><h2>Research & AI consulting</h2><p>Research-grade intelligence for companies, organizations and technical teams.</p></div>
+          <a href="/consulting">Discuss your project <ArrowUpRight size={15} /></a>
+        </div>
+        <div className="consulting-grid">
+          {consulting.map((service, index) => {
+            const Icon = service.icon;
+            return <Reveal delay={index * 75} key={service.title}><a href="/consulting" className="consulting-card"><span>0{index + 1}</span><Icon size={20} /><h3>{service.title}</h3><ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul><ArrowRight className="consulting-arrow" size={17} /></a></Reveal>;
+          })}
+        </div>
+      </section>
+
+      <section className="reference-section">
+        <div className="reference-heading">
+          <div><div className="reference-label"><span /> Research notes</div><h2>Ideas, tutorials and research thinking</h2></div>
+          <a href="/insights">Read all notes <ArrowUpRight size={15} /></a>
+        </div>
+        <div className="reference-card-grid insight-cards">
           {insights.map((post, index) => (
-            <a href={`/insights#${post.slug}`} key={post.slug}><div className={`insight-visual visual-${index + 1}`}><span>{post.type}</span></div><small>{post.category} · {post.date}</small><h3>{post.title}</h3><p>{post.excerpt}</p><span className="read-time">{post.read}</span></a>
+            <Reveal delay={index * 90} key={post.slug}>
+              <a className="reference-card reference-insight" href={`/insights#${post.slug}`}>
+                <div className={`insight-visual visual-${index + 1}`}><span>{post.type}</span></div>
+                <div><small>{post.category} · {post.read}</small><h3>{post.title}</h3><p>{post.excerpt}</p><time>{post.date}</time></div>
+              </a>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="signal-section" id="contact">
-        <div><span className="kicker">Lab Signals</span><h2>Stay connected to the work.</h2><p>New publications, research opportunities, project notes and course announcements—sent with restraint.</p></div>
-        <NewsletterForm />
+      <section className="reference-section">
+        <Reveal>
+          <div className="reference-newsletter">
+            <div className="reference-label"><span /> Lab signals</div>
+            <h2>Stay connected with our latest research and ideas</h2>
+            <p>New publications, project announcements, course launches and research opportunities—in one considered dispatch.</p>
+            <NewsletterForm />
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="reference-section contact-strip">
+        <Reveal>
+          <div><div><h2>Have a research idea or project in mind?</h2><p>Collaboration, consulting, courses or general inquiries—the labs are open.</p></div><a href="/contact">Get in touch <ArrowUpRight size={16} /></a></div>
+        </Reveal>
       </section>
 
       <SiteFooter />
