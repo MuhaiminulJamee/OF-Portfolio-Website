@@ -2,12 +2,6 @@
 
 A responsive research, education, mentorship, and consulting website for Md. Omer Faruque. It brings together the AI in Power Systems Lab and Quantum Cyber Intelligence Lab, publications, courses, research resources, insights, inquiry forms, and a protected administration workspace.
 
-## Live website
-
-[ai-power-quantum-labs.yingdanong7.chatgpt.site](https://ai-power-quantum-labs.yingdanong7.chatgpt.site)
-
-The published website is currently private and may require the owning ChatGPT account to sign in.
-
 ## Website preview
 
 ![Homepage preview showing the AI in Power Systems and Quantum Cyber Intelligence laboratories](docs/website-preview.png)
