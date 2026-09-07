@@ -28,16 +28,17 @@ npm --version
 
 Choose either method below.
 
+- [Open the source repository](https://github.com/MuhaiminulJamee/OF-Portfolio-Website)
+- [Download the latest source ZIP](https://github.com/MuhaiminulJamee/OF-Portfolio-Website/archive/refs/heads/main.zip)
+
 ### Option 1: Clone with Git
 
 Use this option when you have access to the project's Git repository:
 
 ```bash
-git clone <repository-url>
-cd <downloaded-folder>
+git clone https://github.com/MuhaiminulJamee/OF-Portfolio-Website.git
+cd OF-Portfolio-Website
 ```
-
-Replace `<repository-url>` with the shared repository URL and `<downloaded-folder>` with the folder created by Git.
 
 ### Option 2: Download a ZIP
 
