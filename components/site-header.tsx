@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
 
 const nav = [
+  ['About', '/about'],
   ['Labs', '/#labs'],
   ['Research', '/research'],
   ['Courses', '/courses'],
   ['Resources', '/resources'],
   ['Insights', '/insights'],
   ['Consulting', '/consulting'],
-  ['About', '/about'],
 ];
 
 export function SiteHeader() {
@@ -66,10 +66,10 @@ export function SiteHeader() {
     <>
       <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
         <span className="scroll-progress" style={{ width: `${scrollProgress}%` }} aria-hidden="true" />
-        <a className="brand" href="/" aria-label="ResearchBuddy AI home">
-          <span className="brand-mark">RB</span>
+        <a className="brand" href="/" aria-label="Md. Omer Faruque home">
+          <span className="brand-mark">MO</span>
           <span>
-            <strong>ResearchBuddy AI</strong>
+            <strong>Md. Omer Faruque</strong>
             <small>Independent research ecosystem</small>
           </span>
         </a>

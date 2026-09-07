@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-lead">
-        <span className="brand-mark">RB</span>
+        <span className="brand-mark">MO</span>
         <h2>Advance the question.<br />Strengthen the method.</h2>
         <a href="/contact">Start a conversation <ArrowUpRight size={18} /></a>
       </div>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { InquiryForm } from '@/components/forms';
 import { PageHero, PageShell } from '@/components/page-parts';
 
-export const metadata: Metadata = { title: 'Contact', description: 'Contact ResearchBuddy AI about research collaboration, consulting, courses or general inquiries.' };
+export const metadata: Metadata = { title: 'Contact', description: 'Contact Md. Omer Faruque about research collaboration, consulting, courses or general inquiries.' };
 export default function ContactPage() {
   return (
     <PageShell>

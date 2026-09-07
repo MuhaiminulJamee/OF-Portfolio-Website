@@ -132,7 +132,7 @@ export function InquiryForm({ initialType = 'general' }: { initialType?: Inquiry
     void Promise.resolve(context.registerTool({
       name: 'submit_lab_inquiry',
       title: 'Submit a lab inquiry',
-      description: 'Send a research, consulting, course or general inquiry to ResearchBuddy AI.',
+      description: 'Send a research, consulting, course or general inquiry to Md. Omer Faruque.',
       inputSchema: {
         type: 'object',
         properties: {

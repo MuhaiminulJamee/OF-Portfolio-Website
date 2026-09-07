@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ResearchBuddy AI · Power Systems & Quantum Cyber Intelligence',
-    template: '%s · ResearchBuddy AI',
+    default: 'Md. Omer Faruque · Power Systems & Quantum Cyber Intelligence',
+    template: '%s · Md. Omer Faruque',
   },
   description:
     'Research, education, mentorship and consulting across AI in power systems, quantum machine learning and cybersecurity.',
