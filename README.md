@@ -10,9 +10,7 @@ The published website is currently private and may require the owning ChatGPT ac
 
 ## Website preview
 
-[![Homepage preview showing the AI in Power Systems and Quantum Cyber Intelligence laboratories](docs/website-preview.png)](https://ai-power-quantum-labs.yingdanong7.chatgpt.site)
-
-Click the preview to open the live website. Visitors can still view this screenshot on GitHub when the live deployment requires sign-in.
+![Homepage preview showing the AI in Power Systems and Quantum Cyber Intelligence laboratories](docs/website-preview.png)
 
 ## Requirements
 
